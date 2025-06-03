@@ -2,10 +2,18 @@
 
 import styled from "styled-components";
 
-const Container = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+interface ContainerProps {
+  $fullWidth?: boolean
+  $centered?: boolean
+  $padding?: string
+  $background?: string
+}
+
+const Container = styled.div<ContainerProps>`
+  max-width: ${props => props.$fullWidth ? '100%' : '1200px'};
+  margin: ${props => props.$centered ? '0 auto' : '0'};
+  padding: ${props => props.$padding || '20px'};
+  background: ${props => props.$background || 'transparent'};
 `
 
 export { Container };
