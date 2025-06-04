@@ -6,14 +6,19 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "start:db": "pnpm json-server src/data/db.json -p 3001"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
+    "@tanstack/react-query": "^5.80.2",
+    "jose": "^6.0.11",
+    "json-server": "1.0.0-beta.3",
     "next": "15.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.57.0",
+    "react-hot-toast": "^2.5.2",
     "styled-components": "^6.1.18",
     "zod": "^3.25.49"
   },
