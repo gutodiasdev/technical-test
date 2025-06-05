@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧩 Sistema de Gestão de Ativos
 
-## Getting Started
+Este projeto é uma aplicação web desenvolvida com **Next.js** para gerenciar ativos empresariais. Ele permite listar, cadastrar, editar e excluir ativos com um formulário dinâmico que se adapta de acordo com a categoria do ativo.
 
-First, run the development server:
+---
+
+## ✅ Funcionalidades Implementadas
+
+### 📄 1. Listagem de Ativos
+- Tabela paginada no servidor com:
+  - Ordenação por colunas (nome, categoria, status).
+  - Filtros por nome, categoria e status.
+  - Paginação dinâmica (próxima e anterior).
+- Destaque visual para ativos com status **"Em manutenção"** ou **"Inativo"**.
+
+### 📝 2. Formulário Dinâmico para Cadastro
+- Campos exibidos de forma dinâmica conforme a categoria do ativo:
+  - **Campos comuns:** Nome, Categoria, Status, Descrição, Data de aquisição.
+  - **Equipamento:** Número de série, Fornecedor.
+  - **Veículo:** Placa.
+  - **Software:** Chave de licença, Validade da licença.
+- Validação feita com **Zod** para:
+  - Nome, categoria, status e data de aquisição (obrigatórios).
+- Atualização dos campos ao trocar a categoria.
+
+### ✏️ 3. Edição de Ativos
+- Permite editar ativos existentes.
+- Formulário adaptado conforme a categoria.
+
+### 🗑 4. Exclusão de Ativos
+- Confirmação antes da exclusão.
+- Alerta visual de sucesso ou erro.
+
+---
+
+## 🛠 Tecnologias Utilizadas
+
+- **Next.js (App Router)**
+- **TypeScript**
+- **Styled Components**
+- **React Hook Form**
+- **Zod** (validação)
+- **React Query**
+- **JSON Server** (mock de backend)
+- **Jest + React Testing Library** (testes unitários)
+- **pnpm** (gerenciador de pacotes)
+
+> ❌ O Storybook **não** foi implementado.
+
+---
+
+## ⚙️ Como rodar o projeto
+
+Certifique-se de ter o **pnpm** instalado. Se não tiver, instale com:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install -g pnpm
+```
+Em seguida instale os pacotes do projeto:
+
+```bash
+pnpm install
+```
+Agora, há 2 passos que você precisa seguir na ordem indicada:
+
+Passo 1: Abra um terminal e execute o comando abaixo
+
+```bash
+pnpm start:db
+```
+Passo 2: Abra um segundo terminal e execute o comando abaixo
+
+```bash
+npm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Pronto, o projeto está rodando. Utilize o email ```admin@email.com``` e a senha ```admin``` para entrar na aplicação.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧪 Testes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+A aplicação possui uma série de testes que garantem o bom funcionamento de seus componentes, após a instalação do pnpm
+execute o comando em um terceiro terminal:
+ 
+```bash
+pnpm test
+```
 
-## Learn More
+Você verá a lista de testes realizados.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ⚙️ Algumas melhorias para o futuro
+1. Possibilidade de cadastro de usuário;
+2. Melhor gestão de paginação;
+3. Adoção de um banco de dados mais robusto;
+4. Centralizar gestão de paginação apenas em um componente;
+5. Ajustar o layout shift
