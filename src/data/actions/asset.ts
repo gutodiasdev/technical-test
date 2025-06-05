@@ -23,7 +23,7 @@ export interface AssetResponse {
 export const buildAssetQueryString = (query: AssetQuery): Record<string, string | number | boolean> => {
   const params: Record<string, string | number | boolean> = {};
   if (query.filters?.name) {
-    params['name_like'] = query.filters.name;
+    params['q'] = query.filters.name;
   }
   if (query.filters?.category) {
     params['category'] = query.filters.category;

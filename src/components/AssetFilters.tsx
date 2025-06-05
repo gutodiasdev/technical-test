@@ -3,12 +3,13 @@ import { Select } from "@/components/shared/Select";
 import { AssetFilters as IAssetFilters } from '@/hooks/useAssetsFilters';
 import React from 'react';
 import styled from 'styled-components';
+import { Button } from "./shared/Button";
 
 const FiltersContainer = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr 1fr auto;
   gap: 16px;
-  align-items: end;
+  align-items: start;
   margin-bottom: 24px;
   padding: 20px;
   background: #f8f9fa;
@@ -17,45 +18,6 @@ const FiltersContainer = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
-`;
-
-const Button = styled.button<{ variant?: 'primary' | 'secondary' | 'danger' }>`
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  transition: all 0.2s;
-  
-  ${({ variant = 'primary' }) => {
-    switch (variant) {
-      case 'secondary':
-        return `
-          background-color: #6c757d;
-          color: white;
-          &:hover:not(:disabled) {
-            background-color: #5a6268;
-          }
-        `;
-      case 'danger':
-        return `
-          background-color: #dc3545;
-          color: white;
-          &:hover:not(:disabled) {
-            background-color: #c82333;
-          }
-        `;
-      default:
-        return `
-          background-color: #007bff;
-          color: white;
-          &:hover:not(:disabled) {
-            background-color: #0056b3;
-          }
-        `;
-    }
-  }}
 `;
 
 interface AssetFiltersProps {
