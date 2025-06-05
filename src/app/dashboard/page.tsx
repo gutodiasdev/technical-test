@@ -10,6 +10,7 @@ import {
 import { AssetTable } from '@/components/AssetsTable';
 import { Button } from '@/components/shared/Button';
 import { useServerSideAssets } from '@/data/actions/asset';
+import { removeTokenFromCookies } from '@/data/actions/auth';
 import { useAssetManagement } from '@/hooks/useAssetManagement';
 import { useAssetPagination } from '@/hooks/useAssetPagination';
 import { useAssetFilters } from '@/hooks/useAssetsFilters';
@@ -29,6 +30,12 @@ const PageHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
+  
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 16px
+  }
 `;
 
 const PageTitle = styled.h1`
@@ -144,13 +151,23 @@ export default function AssetManagementPage() {
     resetPage();
   }, [handleSort, resetPage]);
 
+  const handleLogout = async () => {
+    localStorage.removeItem("token");
+    await removeTokenFromCookies();
+  }
+
   return (
     <PageContainer>
       <PageHeader>
         <PageTitle>Gerenciamento de Ativos</PageTitle>
-        <Button onClick={openCreateModal} disabled={loading}>
-          Adicionar Ativo
-        </Button>
+        <div>
+          <Button variant="secondary" onClick={handleLogout}>
+            Logout
+          </Button>
+          <Button onClick={openCreateModal} disabled={loading}>
+            Adicionar Ativo
+          </Button>
+        </div>
       </PageHeader>
       {error && (
         <ErrorContainer>
