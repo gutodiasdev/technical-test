@@ -69,7 +69,6 @@ class ApiService {
     }
 
     const response = await fetch(url, fetchOptions);
-    console.log(response);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Administrador",
       "email": "admin@email.com",
       "password": "admin",
@@ -13,7 +13,7 @@
       "updatedAt": "2024-12-03T08:30:00.000Z"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Administrador 2",
       "email": "admin2@email.com",
       "password": "admin",
@@ -69,21 +69,6 @@
       "createdBy": "1",
       "createdAt": "2024-03-01T08:00:00.000Z",
       "updatedAt": "2024-03-01T08:00:00.000Z"
-    },
-    {
-      "id": "4",
-      "name": "Impressora HP LaserJet",
-      "category": "Equipamento",
-      "status": "Inativo",
-      "description": "Impressora laser monocromática",
-      "acquisitionDate": "2022-08-20",
-      "serialNumber": "HP987654321",
-      "supplier": "HP Inc.",
-      "assignedTo": null,
-      "location": "Almoxarifado - Prateleira A3",
-      "createdBy": "1",
-      "createdAt": "2022-08-20T16:45:00.000Z",
-      "updatedAt": "2024-10-15T11:30:00.000Z"
     },
     {
       "id": "5",
@@ -142,6 +127,91 @@
       "createdBy": "1",
       "createdAt": "2021-04-18T15:10:00.000Z",
       "updatedAt": "2024-09-05T12:45:00.000Z"
+    },
+    {
+      "id": "1749129465589",
+      "name": "Ativo teste",
+      "category": "Equipamento",
+      "status": "Ativo",
+      "description": "",
+      "acquisitionDate": "2025-06-05",
+      "serialNumber": "TEST-XPTO",
+      "supplier": "TESTE",
+      "createdAt": "2025-06-05T13:17:45.589Z",
+      "updatedAt": "2025-06-05T13:17:45.589Z"
+    },
+    {
+      "name": "Veículos Teste Updated",
+      "category": "Veículo",
+      "status": "Em manutenção",
+      "description": "",
+      "acquisitionDate": "2025-06-05",
+      "licensePlate": "XXX-1234",
+      "id": "1749129536956",
+      "updatedAt": "2025-06-05T13:19:13.265Z"
+    },
+    {
+      "id": {
+        "~standard": {
+          "vendor": "zod",
+          "version": 1
+        },
+        "def": {
+          "type": "string",
+          "format": "uuid",
+          "check": "string_format",
+          "abort": false,
+          "pattern": {}
+        },
+        "format": "uuid",
+        "minLength": null,
+        "maxLength": null
+      },
+      "name": "UUID Teste",
+      "category": "Equipamento",
+      "status": "Ativo",
+      "description": "",
+      "acquisitionDate": "2025-06-05",
+      "serialNumber": "TEST-XPTO",
+      "supplier": "TESTE",
+      "createdAt": "2025-06-05T14:43:08.618Z",
+      "updatedAt": "2025-06-05T14:43:08.618Z"
+    },
+    {
+      "id": 0.47178816647917765,
+      "name": "random UUID",
+      "category": "Equipamento",
+      "status": "Ativo",
+      "description": "",
+      "acquisitionDate": "2025-06-05",
+      "serialNumber": "TEST-XPTO",
+      "supplier": "TESTE",
+      "createdAt": "2025-06-05T14:46:21.331Z",
+      "updatedAt": "2025-06-05T14:46:21.331Z"
+    },
+    {
+      "id": 8.526472833692244,
+      "name": "Math random",
+      "category": "Equipamento",
+      "status": "Ativo",
+      "description": "",
+      "acquisitionDate": "2025-06-05",
+      "serialNumber": "TESTE-XPTO",
+      "supplier": "TESTE",
+      "createdAt": "2025-06-05T14:47:53.663Z",
+      "updatedAt": "2025-06-05T14:47:53.663Z"
+    },
+    {
+      "id": "af2fae6c-dc0d-48d2-b923-969c5a56254d",
+      "name": "Random 1",
+      "category": "Equipamento",
+      "status": "Ativo",
+      "description": "",
+      "acquisitionDate": "2025-06-05",
+      "serialNumber": "TESTE-XPTO",
+      "supplier": "TESTE",
+      "createdAt": "2025-06-05T14:48:39.038Z",
+      "updatedAt": "2025-06-05T14:48:39.038Z"
     }
   ]
 }

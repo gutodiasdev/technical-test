@@ -1,19 +1,24 @@
-"use client";
-
 import styled from "styled-components";
 
 interface ContainerProps {
   $fullWidth?: boolean
-  $centered?: boolean
-  $padding?: string
-  $background?: string
+  $padding?: string;
 }
 
-const Container = styled.div<ContainerProps>`
-  max-width: ${props => props.$fullWidth ? '100%' : '1200px'};
-  margin: ${props => props.$centered ? '0 auto' : '0'};
-  padding: ${props => props.$padding || '20px'};
-  background: ${props => props.$background || 'transparent'};
-`
+export const Container = styled.div<ContainerProps>`
+  max-width: ${props => props.$fullWidth ? "100%" : "1200px"};
+  margin: 0 auto;
+  padding: ${props => props.$padding ? props.$padding : "20px"};
 
-export { Container };
+  @media (max-width: 768px) {
+    padding: 0 16px;
+  }
+
+  #header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+`;
