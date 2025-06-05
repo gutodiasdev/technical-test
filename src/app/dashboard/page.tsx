@@ -30,12 +30,6 @@ const PageHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
-  
-  > div {
-    display: flex;
-    align-items: center;
-    gap: 16px
-  }
 `;
 
 const PageTitle = styled.h1`
@@ -160,14 +154,9 @@ export default function AssetManagementPage() {
     <PageContainer>
       <PageHeader>
         <PageTitle>Gerenciamento de Ativos</PageTitle>
-        <div>
-          <Button variant="secondary" onClick={handleLogout}>
-            Logout
-          </Button>
-          <Button onClick={openCreateModal} disabled={loading}>
-            Adicionar Ativo
-          </Button>
-        </div>
+        <Button onClick={openCreateModal} disabled={loading}>
+          Adicionar Ativo
+        </Button>
       </PageHeader>
       {error && (
         <ErrorContainer>
