@@ -1,18 +1,7 @@
 import { FormContainer } from '@/components/shared/FormContainer';
+import { renderWithTheme } from '@/setupTests';
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
-
-const mockTheme = {};
-
-const renderWithTheme = (component: React.ReactElement) => {
-  return render(
-    <ThemeProvider theme={mockTheme}>
-      {component}
-    </ThemeProvider>
-  );
-};
+import { screen } from '@testing-library/react';
 
 describe('FormContainer Component', () => {
   describe('Renderização básica', () => {

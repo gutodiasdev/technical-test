@@ -1,18 +1,8 @@
 import { Input } from '@/components/shared/Input';
+import { renderWithTheme } from '@/setupTests';
 import '@testing-library/jest-dom';
-import { fireEvent, render, screen } from '@testing-library/react';
-import React, { createRef } from 'react';
-import { ThemeProvider } from 'styled-components';
-
-const mockTheme = {};
-
-const renderWithTheme = (component: React.ReactElement) => {
-  return render(
-    <ThemeProvider theme={mockTheme}>
-      {component}
-    </ThemeProvider>
-  );
-};
+import { fireEvent, screen } from '@testing-library/react';
+import { createRef } from 'react';
 
 describe('Input Component', () => {
   describe('Renderização básica', () => {

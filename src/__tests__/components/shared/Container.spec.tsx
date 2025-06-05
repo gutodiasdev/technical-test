@@ -1,18 +1,6 @@
 import { Container } from '@/components/shared/Container';
+import { renderWithTheme } from '@/setupTests';
 import '@testing-library/jest-dom';
-import { render } from '@testing-library/react';
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
-
-const mockTheme = {};
-
-const renderWithTheme = (component: React.ReactElement) => {
-  return render(
-    <ThemeProvider theme={mockTheme}>
-      {component}
-    </ThemeProvider>
-  );
-};
 
 Object.defineProperty(window, 'matchMedia', {
   writable: true,

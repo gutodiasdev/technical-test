@@ -1,18 +1,7 @@
 import { Button } from '@/components/shared/Button';
+import { renderWithTheme } from '@/setupTests';
 import '@testing-library/jest-dom';
-import { fireEvent, render, screen } from '@testing-library/react';
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
-
-const mockTheme = {};
-
-const renderWithTheme = (component: React.ReactElement) => {
-  return render(
-    <ThemeProvider theme={mockTheme}>
-      {component}
-    </ThemeProvider>
-  );
-};
+import { fireEvent, screen } from '@testing-library/react';
 
 describe('Button Component', () => {
   describe('Renderização básica', () => {
