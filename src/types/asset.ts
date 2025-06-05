@@ -8,6 +8,8 @@ export interface BaseAsset {
   status: AssetStatus;
   description?: string;
   acquisitionDate: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface Equipment extends BaseAsset {

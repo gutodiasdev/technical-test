@@ -221,13 +221,9 @@ export const AssetForm: React.FC<AssetFormProps> = ({
 
   const handleFormSubmit = (data: FormData) => {
     try {
-      // Valida apenas os campos necessários para a categoria atual
       const validatedAsset = validateDataByCategory(data);
       onSubmit(validatedAsset);
     } catch (error) {
-      console.error('Validation error:', error);
-
-      // Define erros específicos baseados na categoria
       if (data.category === 'Equipamento') {
         if (!data.serialNumber) {
           setError('serialNumber', { message: 'Número de série é obrigatório' });
@@ -257,11 +253,13 @@ export const AssetForm: React.FC<AssetFormProps> = ({
           <>
             <Input
               {...register('serialNumber')}
+              id="serialNumber"
               label="Número de Série *"
               error={errors.serialNumber?.message}
             />
             <Input
               {...register('supplier')}
+              id="supplier"
               label="Fornecedor *"
               error={errors.supplier?.message}
             />
@@ -271,6 +269,7 @@ export const AssetForm: React.FC<AssetFormProps> = ({
         return (
           <Input
             {...register('licensePlate')}
+            id="licensePlate"
             label="Placa *"
             error={errors.licensePlate?.message}
           />
@@ -280,11 +279,13 @@ export const AssetForm: React.FC<AssetFormProps> = ({
           <>
             <Input
               {...register('licenseKey')}
+              id="licenseKey"
               label="Chave de Licença *"
               error={errors.licenseKey?.message}
             />
             <Input
               {...register('licenseExpiration')}
+              id="LicenseExpiration"
               type="date"
               label="Validade da Licença *"
               error={errors.licenseExpiration?.message}
@@ -301,11 +302,13 @@ export const AssetForm: React.FC<AssetFormProps> = ({
       <FormGrid>
         <Input
           {...register('name')}
+          id="name"
           label="Nome *"
           error={errors.name?.message}
         />
         <Select
           {...register('category')}
+          id="category"
           label="Categoria *"
           options={categoryOptions}
           placeholder="Selecione uma categoria"
@@ -313,6 +316,7 @@ export const AssetForm: React.FC<AssetFormProps> = ({
         />
         <Select
           {...register('status')}
+          id="status"
           label="Status *"
           options={statusOptions}
           placeholder="Selecione um status"
@@ -320,20 +324,20 @@ export const AssetForm: React.FC<AssetFormProps> = ({
         />
         <Input
           {...register('acquisitionDate')}
+          id="acquisitionDate"
           type="date"
           label="Data de Aquisição *"
           error={errors.acquisitionDate?.message}
         />
         {renderCategorySpecificFields()}
       </FormGrid>
-
       <Textarea
         {...register('description')}
+        id="description"
         label="Descrição"
         placeholder="Descrição do ativo (opcional)"
         error={errors.description?.message}
       />
-
       <FormActions>
         <Button type="button" variant="secondary" onClick={onCancel}>
           Cancelar
