@@ -122,7 +122,6 @@ describe('Label Component', () => {
       expect(label).toHaveAttribute('title', 'Tooltip do label');
       expect(label).toHaveClass('custom-label');
 
-      // Testa evento de click
       fireEvent.click(label);
       expect(handleClick).toHaveBeenCalledTimes(1);
     });

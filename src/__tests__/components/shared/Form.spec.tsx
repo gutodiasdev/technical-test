@@ -130,7 +130,6 @@ describe('Form Component', () => {
       const form = screen.getByTestId('form-with-props');
       expect(form).toHaveAttribute('method', 'POST');
 
-      // Simular submit
       form.dispatchEvent(new Event('submit', { bubbles: true }));
       expect(handleSubmit).toHaveBeenCalledTimes(1);
     });

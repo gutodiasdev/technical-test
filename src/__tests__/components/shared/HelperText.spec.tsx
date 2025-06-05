@@ -140,7 +140,6 @@ describe('HelperText Component', () => {
       expect(helperText).toHaveAttribute('title', 'Tooltip de ajuda');
       expect(helperText).toHaveClass('custom-helper');
 
-      // Testa evento de click
       helperText.click();
       expect(handleClick).toHaveBeenCalledTimes(1);
     });

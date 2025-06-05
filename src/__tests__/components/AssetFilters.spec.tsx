@@ -30,7 +30,7 @@ describe('AssetFilters', () => {
     setup();
     expect(screen.getByPlaceholderText('Buscar por nome...')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /limpar/i })).toBeInTheDocument();
-    expect(screen.getAllByRole('combobox')).toHaveLength(2); // categoria + status
+    expect(screen.getAllByRole('combobox')).toHaveLength(2);
   });
 
   it('deve chamar onFiltersChange ao digitar no campo de nome', () => {

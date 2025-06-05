@@ -35,7 +35,6 @@ const softwareSchema = baseSchema.extend({
   licenseExpiration: z.string().min(1, 'Validade da licença é obrigatória')
 });
 
-// Schema combinado que aceita todos os campos possíveis
 const combinedSchema = z.object({
   name: z.string().min(1, 'Nome é obrigatório'),
   category: z.enum(['Equipamento', 'Veículo', 'Software'], {
@@ -46,7 +45,6 @@ const combinedSchema = z.object({
   }),
   description: z.string().optional(),
   acquisitionDate: z.string().min(1, 'Data de aquisição é obrigatória'),
-  // Campos condicionais opcionais
   serialNumber: z.string().optional(),
   supplier: z.string().optional(),
   licensePlate: z.string().optional(),
@@ -103,7 +101,6 @@ export const AssetForm: React.FC<AssetFormProps> = ({
   onCancel,
   loading = false
 }) => {
-  // Função para validar dados baseado na categoria
   const validateDataByCategory = (data: FormData): Asset => {
     const { category } = data;
 
@@ -174,12 +171,9 @@ export const AssetForm: React.FC<AssetFormProps> = ({
 
   const selectedCategory = watch('category') as AssetCategory;
 
-  // Limpa erros dos campos não relacionados à categoria atual
   useEffect(() => {
     if (selectedCategory) {
-      // Limpa erros de campos que não pertencem à categoria atual
       const fieldsToKeep = ['name', 'category', 'status', 'description', 'acquisitionDate'];
-
       switch (selectedCategory) {
         case 'Equipamento':
           fieldsToKeep.push('serialNumber', 'supplier');
@@ -192,7 +186,6 @@ export const AssetForm: React.FC<AssetFormProps> = ({
           break;
       }
 
-      // Limpa erros de campos não relacionados
       const allFields = ['serialNumber', 'supplier', 'licensePlate', 'licenseKey', 'licenseExpiration'];
       allFields.forEach(field => {
         if (!fieldsToKeep.includes(field)) {
