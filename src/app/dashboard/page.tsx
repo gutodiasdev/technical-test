@@ -58,7 +58,7 @@ const ErrorContainer = styled.div`
 export default function AssetManagementPage() {
   const { filters, updateFilters, clearFilters, hasActiveFilters } = useAssetFilters();
   const { sortConfig, handleSort } = useAssetSorting();
-  const { pagination, goToPage, resetPage, nextPage, prevPage } = useAssetPagination(5);
+  const { pagination, goToPage, resetPage } = useAssetPagination(5);
   const {
     deleteConfirmModal,
     createModal,
@@ -129,6 +129,7 @@ export default function AssetManagementPage() {
     try {
       await deleteExistingAsset(deleteConfirmModal.asset.id);
       closeDeleteConfirm();
+      resetPage();
     } catch (error) {
       console.error('Erro ao deletar ativo:', error);
     }
@@ -191,8 +192,8 @@ export default function AssetManagementPage() {
                 totalPages: data.totalPages
               }}
               onPageChange={handlePageChange}
-              onPrevPage={prevPage}
-              onNextPage={nextPage}
+              onPrevPage={() => handlePageChange(data.page - 1)}
+              onNextPage={() => handlePageChange(data.page + 1)}
             />
           )}
         </>

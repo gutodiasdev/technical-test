@@ -77,19 +77,6 @@
       "updatedAt": "2024-02-12T13:20:00.000Z"
     },
     {
-      "id": "6",
-      "name": "Adobe Creative Suite",
-      "category": "Software",
-      "status": "Em manutenção",
-      "description": "Pacote de design e criação",
-      "acquisitionDate": "2023-11-05",
-      "licenseKey": "ADOBE-12345-67890",
-      "licenseExpiration": "2024-11-05",
-      "createdBy": "1",
-      "createdAt": "2023-11-05T10:15:00.000Z",
-      "updatedAt": "2024-10-30T14:22:00.000Z"
-    },
-    {
       "id": "7",
       "name": "Monitor Samsung 27\"",
       "category": "Equipamento",
@@ -174,30 +161,6 @@
       "supplier": "TESTE",
       "createdAt": "2025-06-05T14:46:21.331Z",
       "updatedAt": "2025-06-05T14:46:21.331Z"
-    },
-    {
-      "id": 8.526472833692244,
-      "name": "Math random",
-      "category": "Equipamento",
-      "status": "Ativo",
-      "description": "",
-      "acquisitionDate": "2025-06-05",
-      "serialNumber": "TESTE-XPTO",
-      "supplier": "TESTE",
-      "createdAt": "2025-06-05T14:47:53.663Z",
-      "updatedAt": "2025-06-05T14:47:53.663Z"
-    },
-    {
-      "id": "af2fae6c-dc0d-48d2-b923-969c5a56254d",
-      "name": "Random 1",
-      "category": "Equipamento",
-      "status": "Ativo",
-      "description": "",
-      "acquisitionDate": "2025-06-05",
-      "serialNumber": "TESTE-XPTO",
-      "supplier": "TESTE",
-      "createdAt": "2025-06-05T14:48:39.038Z",
-      "updatedAt": "2025-06-05T14:48:39.038Z"
     }
   ]
 }

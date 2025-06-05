@@ -23,7 +23,7 @@ export interface AssetResponse {
 export const buildAssetQueryString = (query: AssetQuery): Record<string, string | number | boolean> => {
   const params: Record<string, string | number | boolean> = {};
   if (query.filters?.name) {
-    params['q'] = query.filters.name;
+    params['name_like'] = query.filters.name;
   }
   if (query.filters?.category) {
     params['category'] = query.filters.category;
@@ -51,8 +51,12 @@ export const fetchAssets = async (query: AssetQuery = {}): Promise<AssetResponse
       queryParams,
       authorization: true
     });
+    const getTotal = await apiService.request<Asset[]>({
+      path: '/assets',
+      authorization: true
+    });
     const assets = Array.isArray(response) ? response : [];
-    const total = assets.length;
+    const total = getTotal.length;
     const page = query.page || 1;
     const limit = query.limit || 10;
     const totalPages = Math.ceil(total / limit);

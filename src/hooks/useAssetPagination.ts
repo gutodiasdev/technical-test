@@ -15,7 +15,7 @@ export const useAssetPagination = (limit: number = 5) => {
     totalPages: 0
   });
 
-  const updatePagination = useCallback((total: number) => {
+  const updatePagination = useCallback(async (total: number) => {
     const totalPages = Math.ceil(total / pagination.limit);
     setPagination(prev => ({
       ...prev,
